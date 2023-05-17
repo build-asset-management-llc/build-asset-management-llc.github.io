@@ -1,0 +1,26 @@
+{
+  "name": "buildbitcoin.com",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.16.6",
+    "@astrojs/mdx": "^0.19.0",
+    "@astrojs/partytown": "^1.2.1",
+    "@astrojs/tailwind": "^3.1.1",
+    "@fontsource/barlow": "^4.5.9",
+    "@fontsource/vollkorn": "^4.5.14",
+    "astro": "^2.3.1",
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "sharp": "^0.31.3"
+  }
+}

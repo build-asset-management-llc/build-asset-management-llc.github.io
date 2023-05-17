@@ -1,0 +1,17 @@
+---
+import Cta from "@components/form/cta.astro";
+import Hero from "@components/hero.astro";
+import Partners from "@components/partners.astro";
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 place-items-center p-8 bg-inkblue text-white rounded-lg">
+  <div class="lg:order-1">
+    <Hero />
+  </div>
+  <div class="py-6 lg:order-2 lg:block">
+    <Cta />
+  </div>
+  <div class="mt-8 lg:order-3">
+    <Partners />
+  </div>
+</div>

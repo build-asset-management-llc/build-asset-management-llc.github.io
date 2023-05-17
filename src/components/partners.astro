@@ -1,0 +1,39 @@
+---
+import { Image } from "@astrojs/image/components";
+import buildLogo from "assets/build.png"
+import ucLogo from "assets/unchained.svg"
+
+const partners = [
+  {
+    title: "Investment Advisor",
+    alt: "Build Asset Management Logo",
+    logo: buildLogo,
+  },
+  {
+    title: "Loan Servicer",
+    alt: "Unchained Capital Logo",
+    logo: ucLogo,
+  }
+];
+---
+
+<h3 class="text-center">Service Providers</h3>
+<div class="grid grid-cols-1 md:grid-cols-2">
+  {
+    partners.map((item) => (
+      <div class="flex gap-2 mx-2 mt-4 place-content-center">
+        <div>
+          <Image
+            src={item.logo}
+            alt={item.alt}
+            height={50}
+            aspectRatio={item.logo.width / item.logo.height}
+            loading="eager"
+            format="webp"
+          />
+          <p class="text-center">{item.title}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

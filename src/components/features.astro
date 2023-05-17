@@ -1,0 +1,31 @@
+---
+const features = [
+  {
+    value: "Minimized",
+    title: "Net Charge-Offs"
+  },
+  {
+    value: "Competitive",
+    title: "Target Net IRR*"
+  },
+  {
+    value: "Lower",
+    title: "Average LTVs"
+  },
+  {
+    value: "> $450MM",
+    title: "Loan Originations"
+  }
+];
+---
+
+<div class="grid grid-cols-2 mt-12 gap-8">
+  {
+    features.map((item) => (
+      <div>
+        <p class="text-lg text-jade">{item.value}</p>
+        <h3 class="text-lg">{item.title}</h3>
+      </div>
+    ))
+  }
+</div>

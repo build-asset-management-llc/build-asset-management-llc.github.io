@@ -1,0 +1,27 @@
+---
+import Contact from "@components/form/contact.astro";
+import { Image } from "@astrojs/image/components";
+import brochureCover from "assets/brochure.png";
+---
+
+<div
+  class="bg-jade p-8 rounded-lg flex flex-col items-center text-center">
+  <h2 class="text-white text-1xl md:text-2xl">
+    Request a Brochure
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 mt-5">
+    <div class="px-2">
+      <Contact />
+    </div>
+    <div class="px-2">
+      <Image
+        src={brochureCover}
+        alt="Build Secured Income Fund I Marketing Brochure Cover Page"
+        height={330}
+        aspectRatio={brochureCover.width / brochureCover.height}
+        loading="eager"
+        format="webp"
+      />
+    </div>
+  </div>
+</div>
