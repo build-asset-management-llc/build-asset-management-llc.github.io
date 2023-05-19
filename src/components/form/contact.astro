@@ -115,11 +115,11 @@ import Modal from "@components/ui/modal.astro";
         let json = await response.json();
         if (response.status == 200) {
           // update the text
-          result.innerHTML = "Thank for your requesting a brochure.<br />We will reach out to you shortly with more information.";
+          result.innerHTML = "Thank you for requesting a brochure.<br />We will reach out to you shortly with more information.";
         } else {
           console.log(response);
           // update the text
-          result.innerHTML = "Error submitting request! Please reach out directly for more information at <a href=\"mailto:info@getbuilding.com\" class=\"text-jade\">info@getbuilding.com</a>.";
+          result.innerHTML = "Error submitting request!<br />Please reach out directly for more information at <a href=\"mailto:info@getbuilding.com\" class=\"text-jade\">info@getbuilding.com</a>.";
         }
       })
       .catch((error) => {
