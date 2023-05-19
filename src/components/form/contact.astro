@@ -1,5 +1,6 @@
 ---
 import Button from "@components/ui/button.astro";
+import Modal from "@components/ui/modal.astro";
 ---
 
 <form
@@ -52,8 +53,9 @@ import Button from "@components/ui/button.astro";
     <label for="updates" class="text-white">Receive future updates</label>
   </div>
   <Button type="submit" size="lg" block>Request a Brochure</Button>
-  <div id="result" class="mt-3 text-center"></div>
 </form>
+
+<Modal />
 
 <style>
   .invalid-feedback,
@@ -77,6 +79,7 @@ import Button from "@components/ui/button.astro";
 
 <script is:inline>
   const form = document.getElementById("form");
+  const modal = document.getElementById("myModal");
   const result = document.getElementById("result");
 
   form.addEventListener("submit", function (e) {
@@ -89,8 +92,16 @@ import Button from "@components/ui/button.astro";
     const formData = new FormData(form);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
+    // show the modal
+    modal.style.display = "block";
     result.classList.add("text-inkblue");
     result.innerHTML = "Sending...";
+
+    // close the modal when close button is clicked
+    const closeButton = modal.querySelector(".close");
+    closeButton.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
 
     fetch("https://b6dyzces09.execute-api.us-west-2.amazonaws.com", {
       method: "POST",
@@ -103,24 +114,22 @@ import Button from "@components/ui/button.astro";
       .then(async (response) => {
         let json = await response.json();
         if (response.status == 200) {
-          result.classList.add("text-bitcoin");
-          result.innerHTML = json.result;
+          // update the text
+          result.innerHTML = "Thank for your requesting a brochure.<br />We will reach out to you shortly with more information.";
         } else {
           console.log(response);
-          result.classList.add("text-burgundy");
-          result.innerHTML = json.result;
+          // update the text
+          result.innerHTML = "Error submitting request! Please reach out directly for more information at <a href=\"mailto:info@getbuilding.com\" class=\"text-jade\">info@getbuilding.com</a>.";
         }
       })
       .catch((error) => {
         console.log(error);
-        result.innerHTML = "Something went wrong!";
+        // update the text
+        result.innerHTML = "Error submitting request!<br />Please reach out directly for more information at <a href=\"mailto:info@getbuilding.com\" class=\"text-jade\">info@getbuilding.com</a>.";
       })
       .then(function () {
         form.reset();
         form.classList.remove("was-validated");
-        setTimeout(() => {
-          result.style.display = "none";
-        }, 5000);
       });
   });
 </script>
