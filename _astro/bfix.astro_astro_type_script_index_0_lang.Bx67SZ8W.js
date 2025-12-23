@@ -1,0 +1,1 @@
+import{g as e,s as o}from"./cookies.BlQ8KPxz.js";const s=document.getElementById("bfix-disclosure-modal"),t=document.getElementById("continueButtonBFIXDisclosureModal"),c=e("acceptedBFIXDisclosure");c||s?.showModal();t?.addEventListener("click",()=>{o("acceptedBFIXDisclosure","true",30)});

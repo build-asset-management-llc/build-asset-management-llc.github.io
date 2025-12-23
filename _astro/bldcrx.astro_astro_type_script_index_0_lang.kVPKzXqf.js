@@ -1,0 +1,1 @@
+import{g as e,s as o}from"./cookies.BlQ8KPxz.js";const s=document.getElementById("bldcrx-disclosure-modal"),t=document.getElementById("continueButtonBLDCRXDisclosureModal"),c=e("acceptedBLDCRXDisclosure");c||s?.showModal();t?.addEventListener("click",()=>{o("acceptedBLDCRXDisclosure","true",30)});
