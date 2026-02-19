@@ -1,1 +1,0 @@
-import{g as e,s as o}from"./cookies.BlQ8KPxz.js";const s=document.getElementById("bsifi-disclosure"),t=document.getElementById("continueButtonBSIFIDisclosureModal"),c=e("acceptedBSIFIDisclosure");c||s?.showModal();t?.addEventListener("click",()=>{o("acceptedBSIFIDisclosure","true",30)});
