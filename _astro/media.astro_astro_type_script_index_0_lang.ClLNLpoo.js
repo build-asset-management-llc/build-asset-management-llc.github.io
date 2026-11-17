@@ -1,0 +1,1 @@
+import{n as e,t}from"./form.B9iYgAqp.js";document.querySelectorAll(`[data-media-form]`).forEach(n=>t(n,{endpoint:`media`,successMessage:`Thank you. Your message has been submitted.`,payload:t=>({name:e(t,`name`),email:e(t,`email`),message:e(t,`message`)}),onSuccess:()=>window.posthog?.capture(`media_request_submitted`)}));
